@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- nav bar -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+
+                        </ul>
+                    </div>
+                    <a class="btn font-raleway font-extrabold btn-ghost text-2xl text-[#030712]">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-[#030712]">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-[#1DD1001A] border-[#1DD10066]">Bus <img src="images/bus-icon.png" alt=""> </a>
+                </div>
+            </div>
+        </nav>
+        <!-- banner section -->
+        <div class="min-h-screen bg-[url(images/banner.png)] bg-no-repeat bg-center ">
+            <div class="flex flex-col justify-center items-center p-20 gap-5 ">
+                <h1 class="text-6xl font-extrabold text-white ">End-to-End Travel With</h1>
+                <h1 class="text-6xl font-extrabold text-[#1DD100]"> P Paribahan</h1>
+                <p class="text-xl text-white text-center">Your Journey Starts Here: Fast, Convenient, and Reliable Bus Ticket
+                    Service.Seamless Travel Planning: Book Your Bus Tickets with Ease and Comfort</p>
+                <button class="btn btn-success bg-[#1DD100] font-bold">Buy Tickets</button>
+
+                <div class="flex flex-row  gap-28  absolute -bottom-24">
+                    <div class="flex bg-white p-5 rounded-lg border-b-4 border-b-[#1DD100] ">
+                        <img class="mr-5" src="images/people.png" alt="">
+                        <div>
+                        <h1 class="text-2xl font-bold">500K+</h1>
+                        <p>Regesterd Users</p>
+                    </div>
+                    </div>
+                    <div class="flex bg-white p-5 rounded-lg border-b-4 border-b-[#1DD100] ">
+                        <img class="mr-5" src="images/ticket-cupon.png" alt="">
+                        <div>
+                        <h1 class="text-2xl font-bold">1.7 lacks</h1>
+                        <p>Ticket sold</p>
+                    </div>
+                    </div>
+                    <div class="flex bg-white p-5 rounded-lg border-b-4 border-b-[#1DD100] ">
+                        <img class="mr-5" src="images/stoppage.png" alt="">
+                        <div>
+                        <h1 class="text-2xl font-bold">80K+</h1>
+                        <p>Rental Partners</p>
+                    </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+<section class="mt-20  flex flex-col justify-center items-center  gap-6">
+    <div>
+        <h1 class="text-3xl font-extrabold text-center">Best Offer for you</h1>
+        <div class=" m-20 flex flex-col w-full lg:flex-row gap-8">
+            <!-- 15% cupon -->
+            <div class="flex p-24 flex-row h-32 card bg-base-300 rounded-box place-items-center  bg-[#FFBF0F]">
+            <div>
+                <h1 class="text-3xl font-extrabold">15% OFF</h1>
+                <p class="font-bold">On your next Purchase</p>
+                <p class="">Use by january 2024</p>
+            </div>
+            <div> <img src="images/cupon-devider.png" alt="">  </div>
+            <div>
+                <h1 class="text-3xl font-extrabold">New <sub>15</sub> </h1>
+                <p>cupon code</p>
+            </div>  
+            
+            </div> 
+<!-- couple cupon 20% -->
+            <div class="flex p-24 flex-row h-32 card bg-base-300 rounded-box place-items-center bg-[#F78C9C]">
+                <div>
+                    <h1 class="text-3xl font-extrabold">20% OFF</h1>
+                    <p class="font-bold">On your next Purchase</p>
+                    <p class="">Use by january 2024</p>
+                </div>
+                <div> <img src="images/cupon-devider.png" alt="">  </div>
+                <div>
+                    <h1 class="text-3xl font-extrabold">Coule 20 </h1>
+                    <p>cupon code</p>
+                </div>  
+                
+                </div> 
+             
+          </div>
+    </div>
+    <button class="btn text-xl btn-outline btn-success">See all offers</button>
+</section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
