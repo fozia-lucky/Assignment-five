@@ -5,11 +5,12 @@ function scrollToBuyTickets() {
         buyTickets.scrollIntoView({ behavior: "smooth" });
     }
 }
-
 // Apply coupon logic
 function applyCoupon() {
     const couponInput = document.getElementById('coupon-input');
     const couponCode = couponInput.value.trim().toLowerCase();
+    const applyCouponButton = document.getElementById('apply-coupon-button');
+
     const totalPriceElement = document.getElementById('total-price');
     const grandTotalPriceElement = document.getElementById('grand-total-price');
     const totalSeatsElement = document.getElementById('total-seat');
@@ -22,6 +23,13 @@ function applyCoupon() {
             discountPercentage = 15;
         } else if (couponCode === 'couple20') {
             discountPercentage = 20;
+        }
+
+        // Check if a valid coupon code was entered
+        if (discountPercentage > 0) {
+            // Hide coupon input field and apply button
+            couponInput.style.display = 'none';
+            applyCouponButton.style.display = 'none';
         }
     }
 
@@ -39,6 +47,12 @@ function handleButtonClick(event) {
     const price = 550;
 
     if (clickedElement.tagName === 'KBD' && !clickedElement.classList.contains('selected')) {
+        const selectedSeats = document.querySelectorAll('.kbd.selected');
+        if (selectedSeats.length >= 4) {
+            alert('You can only buy up to 4 tickets.');
+            return;
+        }
+
         setBackgroundColor(clickedElement.id);
         clickedElement.classList.add('selected'); // Mark the seat as selected
 
@@ -47,11 +61,10 @@ function handleButtonClick(event) {
         const newScore = parseInt(currentScoreText) - 1;
         currentScoreElement.innerText = newScore.toString();
 
-        const totalSeats = document.getElementById('total-seat');
-        const seats = totalSeats.innerText;
-        const currentSeats = parseInt(seats);
+        const totalSeatsElement = document.getElementById('total-seat');
+        const currentSeats = parseInt(totalSeatsElement.innerText);
         const finalSeats = currentSeats + 1;
-        totalSeats.innerText = finalSeats;
+        totalSeatsElement.innerText = finalSeats;
 
         const seatInfo = document.getElementById('selected-seat-info');
         const seatId = clickedElement.id;
@@ -76,7 +89,7 @@ function handleButtonClick(event) {
         const grandTotalPriceElement = document.getElementById('grand-total-price');
         const grandTotalPrice = parseInt(grandTotalPriceElement.innerText);
 
-        if (finalSeats >= 4) {
+        if (finalSeats == 4) {
             const newGrandTotalPrice = grandTotalPrice + price;
             grandTotalPriceElement.innerText = newGrandTotalPrice.toString();
         } else {
@@ -153,4 +166,3 @@ const kbdElements = document.querySelectorAll('.kbd');
 kbdElements.forEach(kbdElement => {
     kbdElement.addEventListener('click', handleButtonClick);
 });
-
